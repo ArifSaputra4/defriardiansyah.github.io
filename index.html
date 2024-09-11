@@ -1,0 +1,107 @@
+<style>
+    *,
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .myBG {
+        background: url("ultah.jpg");
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        max-width: 50%;
+        margin: 0 auto;
+        position: relative;
+        background: url("ultah.jpg");
+    }
+    video {
+        display: block;
+        width: 100%;
+        border: 3px solid rgb(255, 96, 207);
+    }
+    .video-component {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 10px 12px;
+    }
+    .btn {
+        border: none;
+        padding: 10px;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 15px;
+        border-radius: 13px;
+    }
+    .btn-play {
+        background-color: rgb(199, 197, 197)
+
+    }
+    
+    .btn-play:hover{
+        background-color:rgb(255, 96, 207);
+        transition: .5s ease-in-out;
+        transition-delay: .1,5s;
+    }
+
+    .btn-pause {
+        background-color: rgb(199, 197, 197)
+    }
+
+    .btn-pause:hover{
+        background-color:rgb(255, 96, 207);
+        transition: .5s ease-in-out;
+        transition-delay: .1,5s;
+    }
+    .btn-minimize {
+        background-color: rgb(199, 197, 197)
+    }
+
+    .btn-minimize:hover{
+        background-color:rgb(255, 96, 207);
+        transition: .5s ease-in-out;
+        transition-delay: .1,5s;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultah Cantik Mamas</title>
+</head>
+<body>
+    <div class="myBG">
+        <div class="container">
+            <video width="720">
+                <source src="ultah.mp4" type="video/mp4" />
+            </video>
+            <div class="video-component">
+                <button onclick="play()" class="btn btn-play">PLAY</button>
+                <button onclick="pause()" class="btn btn-pause">PAUSE</button>
+                <button onclick="minimize()" class="btn btn-minimize">MINIMIZE</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const videoComponent = document.querySelector("video")
+    function play() {
+        videoComponent.play()
+    }
+    function pause() {
+        videoComponent.pause()
+        
+    }
+    function minimize() {
+        videoComponent.requestPictureInPicture()
+
+    }
+</script>
+</html>
